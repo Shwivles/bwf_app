@@ -13,3 +13,11 @@ export const reset = () => ({
         seconds: 30
     }
 });
+
+export const updateSec = () => ({
+    type: 'UPDATE_SEC'
+});
+
+export const updateMin = () => ({
+    type: 'UPDATE_MIN'
+});

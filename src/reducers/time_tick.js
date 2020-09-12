@@ -1,7 +1,6 @@
 const defaultState = {
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
+    minutes: 1,
+    seconds: 30,
     onOff: 'off',
     ssButton: 'Start'
 };
@@ -11,13 +10,13 @@ const tickReducer = (state = defaultState, action) => {
         case 'UPDATE_SEC':
             return {
                 ...state,
-                seconds: state.seconds + 1
+                seconds: state.seconds - 1
             };
         case 'UPDATE_MIN':
             return {
                 ...state,
-                minutes: state.minutes + 1,
-                seconds: 0
+                minutes: state.minutes - 1,
+                seconds: 59
             };
         /*
         case 'UPDATE_HOUR':

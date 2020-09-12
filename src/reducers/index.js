@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import tick from './time_tick';
+import tickReducer from './time_tick';
 
 const rootReducer = combineReducers({
-    tick
+    tickReducer
 });
 
 export default rootReducer;
