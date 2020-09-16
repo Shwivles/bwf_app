@@ -1,8 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { timerStart, timerStop, reset, updateSec, updateMin } from '../actions';
-//import tickReducer from '../reducers/time_tick';
+import { timerStart, timerStop, reset, updateSec, updateMin, timerEnd, increaseMin, increaseSec, decreaseMin, decreaseSec } from '../actions';
 
 function Timer() {
 
@@ -10,7 +9,13 @@ function Timer() {
     const dispatch = useDispatch();
 
     const tick = () => {
-
+        if (time.seconds === 0 && time.minutes === 0) {
+            dispatch(timerEnd());
+        } else if (time.seconds === 0) {
+            dispatch(updateMin());
+        } else {
+            dispatch(updateSec());
+        }
     }
 
     const handleTime = () => {
@@ -23,7 +28,7 @@ function Timer() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            if (time.onOff === 'off') {
+            if (time.onOff === 'on') {
                 tick();
             }
         }, 1000);
@@ -33,14 +38,33 @@ function Timer() {
         }
     });
 
+    let minutes = time.minutes;
+        if (time.minutes < 10) {
+            minutes = '0' + time.minutes;
+        }
+    let seconds = time.seconds;
+        if (time.seconds < 10) {
+            seconds = '0' + time.seconds;
+        }
+
     return (
         <div>
             <div>
-                {time.minutes}:{time.seconds}
+                <div>
+                    <button onClick={() => dispatch(increaseMin())}>Increase</button>
+                    <div>{minutes}</div>
+                    <button onClick={() => dispatch(decreaseMin())}>Decrease</button>
+                </div>
+                <div>:</div>
+                <div>
+                    <button onClick={() => dispatch(increaseSec())}>Increase</button>
+                    <div>{seconds}</div>
+                    <button onClick={() => dispatch(decreaseSec())}>Decrease</button>
+                </div>
             </div>
             <div>
-                <button>{time.ssButton}</button>
-                <button>Reset</button>
+                <button onClick={handleTime}>{time.ssButton}</button>
+                <button onClick={() => dispatch(reset())}>Reset</button>
             </div>
         </div>
     );
