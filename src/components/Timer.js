@@ -48,24 +48,28 @@ function Timer() {
         }
 
     return (
-        <div>
-            <div>
+        <div className="sticky">
+        <div className="time-container">
+            <div className="timer ">
                 <div>
                     <button onClick={() => dispatch(increaseMin())}>Increase</button>
-                    <div>{minutes}</div>
+                    <div style={{textAlign: "center"}}>
+                        {minutes}
+                    </div>
                     <button onClick={() => dispatch(decreaseMin())}>Decrease</button>
                 </div>
                 <div>:</div>
                 <div>
                     <button onClick={() => dispatch(increaseSec())}>Increase</button>
-                    <div>{seconds}</div>
+                    <div style={{textAlign: "center"}}>{seconds}</div>
                     <button onClick={() => dispatch(decreaseSec())}>Decrease</button>
                 </div>
             </div>
-            <div>
+            <div className="time-buttons">
                 <button onClick={handleTime}>{time.ssButton}</button>
                 <button onClick={() => dispatch(reset())}>Reset</button>
             </div>
+        </div>
         </div>
     );
 }

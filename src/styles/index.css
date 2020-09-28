@@ -19,3 +19,30 @@ code {
     padding-top: 10px;
     padding-bottom: 20px;
 }
+
+.time-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #e9ecef;
+    align-self: flex-start;
+    padding: 5px 0 5px 0;
+}
+
+.sticky {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+
+.timer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.time-buttons {
+    display: flex;
+    justify-content: center;
+}

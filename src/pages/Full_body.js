@@ -4,7 +4,7 @@ import Timer from '../components/Timer';
 
 function Fullbody() {
     return (
-        <div>
+        <div style={{height: "3000px"}}>
             <Navi />
             <Timer />
         </div>
