@@ -1,5 +1,6 @@
 const defaultState = {
     shoulderBand: {
+        name: 'Shoulder Band Warmup',
         reps: 5,
         completed: 0
     },
