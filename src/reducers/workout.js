@@ -2,35 +2,35 @@ const defaultState = {
     shoulderBand: {
         name: 'Shoulder Band Warmup',
         reps: 5,
-        completed: 0
+        completed: [0, 1, 0]
     },
     squatSky: {
         reps: 5,
-        completed: 0
+        completed: [0]
     },
     gmbWrist: {
         reps: 10,
-        completed: 0
+        completed: [0]
     },
     deadbugs: {
         reps: 30,
-        completed: 0
+        completed: [0]
     },
     archHangs: {
         reps: 10,
-        completed: 0
+        completed: [0]
     },
     supportHold: {
         reps: 30,
-        completed: 0
+        completed: [0]
     },
     eSquat: {
         reps: 10,
-        completed: 0
+        completed: [0]
     },
     eHinge: {
         reps: 10,
-        completed: 0
+        completed: [0]
     }
 }
 
