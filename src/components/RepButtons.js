@@ -8,7 +8,7 @@ import React from 'react';
 function RepButtons({ exercise }) {
     console.log(exercise);
 
-    const test = exercise.completed.map((exerciseArr, idx) => {
+    const mappedCompletedRep = exercise.completed.map((exerciseArr, idx) => {
         return (
             <div key={idx}>
             {
@@ -20,30 +20,12 @@ function RepButtons({ exercise }) {
             }
             </div>
         );
-       /*
-        if (exerciseArr === 1) {
-            return(
-                <div>{exercise.reps}</div>
-            );
-        } else {
-            return (
-                <div>click here</div>
-            );
-        }
-        */
+       
     });
 
-    /**
-     * ALTERNATE THINKING:
-     * pass through name of exercise as props
-     * useSelector for workoutReducer
-     * match name of exercise to corresponding state in workout reduer
-     * map the completed 
-     */
-    
-   return (
+       return (
        <div>
-           {test}
+           {mappedCompletedRep}
        </div>
    ); 
 }
