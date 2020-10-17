@@ -10,7 +10,7 @@ function RepButtons({ exercise }) {
 
     const mappedCompletedRep = exercise.completed.map((exerciseArr, idx) => {
         return (
-            <div key={idx}>
+            <div key={`${exercise.id}-${idx}`}>
             {
                 exerciseArr ===  1 ?
                 <p>{exercise.reps}</p>
