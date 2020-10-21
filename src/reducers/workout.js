@@ -46,6 +46,36 @@ const defaultState = {
         id: 'eHinge',
         reps: 10,
         completed: [0]
+    },
+    pullup: {
+        name: ['Scapular Pulls', 'Arch Hangs', "Pull-up Negatives", 'Pull-ups'],
+        id: 'pullup',
+        reps: '5',
+        completed: [0, 0, 0]
+    },
+    squat: {
+        name: ['Asisted Squat', 'Squat', 'Split Squat', 'Bulgarian Split Squat', 'Beginner Shrimp Squat', 'Intermediate Shrimp Squat', 'Advanced Shrimp Squats'],
+        id: 'squat',
+        reps: 5,
+        completed: [0, 0, 0]
+    },
+    dip: {
+        name: ['Parrallel Bar Hold', 'Negative Dips', 'Parralel Bar Dips'],
+        id: 'dip',
+        reps: 5,
+        completed: [0, 0, 0]
+    },
+    rows: {
+        name: ['Vertical Rows', 'Incline Rows', 'Horizontal Rows', 'Wide Rows', 'Weighted Inverted Rows'],
+        id: 'rows',
+        reps: 5,
+        completed: [0, 0, 0]
+    },
+    pushup: {
+        name: ['Vertical Pushup', 'Incline Pushup', 'Full Pushup', 'Diamond Pushup', 'Pseudo Planche Pushups'],
+        id: 'pushup',
+        reps: 5,
+        completed: [0, 0, 0]
     }
 }
 
