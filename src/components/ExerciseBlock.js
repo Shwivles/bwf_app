@@ -1,6 +1,7 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import RepButtons from './RepButtons';
+import ExerciseSelect from './ExerciseSelect';
 import { increaseRep, decreaseRep } from '../actions/workoutActions';
 
 /**
@@ -10,7 +11,6 @@ import { increaseRep, decreaseRep } from '../actions/workoutActions';
  * pass in workoutReducer state as props and display content in object
  */
 function ExerciseBlock({ exercise }) {
-    const exerciseState = useSelector(state => state.workoutReducer);
     const dispatch = useDispatch();
 
 
@@ -22,9 +22,8 @@ function ExerciseBlock({ exercise }) {
                 <div>{exercise.reps}</div>
                 <button onClick={() => dispatch(decreaseRep(exercise.id))}>down</button>
             </div>
-            <div>
-                <p>{exercise.name}</p>
-            </div>
+
+            <ExerciseSelect exercise={exercise} />
 
             <RepButtons exercise={exercise} />
             

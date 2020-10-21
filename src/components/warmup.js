@@ -11,7 +11,7 @@ function Warmup() {
 
     return (
         <div className="exercise-container">
-            <h1>Warm up section</h1>
+            <h1 style={{margin: "20px 0 20px 0"}}>Warm up section</h1>
             
             <ExerciseBlock exercise={exerciseState.shoulderBand} />
 

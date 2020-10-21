@@ -7,10 +7,10 @@ import Container from 'react-bootstrap/Container';
 
 function Fullbody() {
     return (
-        <div style={{height: "3000px"}}>
+        <div style={{height: "6000px"}}>
             <Navi />
             <Timer />
-            <Container>
+            <Container >
                 <Warmup />
             </Container>
         </div>
