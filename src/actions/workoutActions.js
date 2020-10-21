@@ -13,14 +13,16 @@ export const decreaseRep = (id) => ({
 //pass name as param to locate corresponding rexercise rep count
 //add to rep counter
 //onclick function should get state and display
-export const completeRep = (id) => ({
+export const completeRep = (id, idx) => ({
     type: "COMPLETE_REP",
-    id
+    id,
+    idx
 });
 
 //pass name as param to locate which corresponding exercise's rep to delete
-export const deleteRep = (id) => ({
+export const deleteRep = (id, idx) => ({
     type: "DELETE_REP",
-    id
+    id,
+    idx
 });
 

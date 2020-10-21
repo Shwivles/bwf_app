@@ -62,6 +62,17 @@ const workoutReducer = (state = defaultState, action) => {
 
             return decreaseState;
 
+        case 'COMPLETE_REP':
+            const completedState = {...state};
+            completedState[action.id].completed[action.idx] = 1;
+
+            return completedState;
+
+        case 'DELETE_REP':
+            const deletedState = {...state};
+            deletedState[action.id].completed[action.idx] = 0;
+            return deletedState;
+
         default: 
             return state;
 

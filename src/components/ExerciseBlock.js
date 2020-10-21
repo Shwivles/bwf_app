@@ -19,7 +19,7 @@ function ExerciseBlock({ exercise }) {
         <div className="exercise-block">
             <div>
                 <button onClick={() => dispatch(increaseRep(exercise.id))}>up</button>
-                <div key={exercise.reps}>{exercise.reps}</div>
+                <div>{exercise.reps}</div>
                 <button onClick={() => dispatch(decreaseRep(exercise.id))}>down</button>
             </div>
             <div>
