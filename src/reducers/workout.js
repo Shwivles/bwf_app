@@ -65,6 +65,12 @@ const defaultState = {
         reps: 5,
         completed: [0, 0, 0]
     },
+    hinge: {
+        name: ['Romanian Deadlift', 'Single Legged Deadlift', 'Banded Nordic Curl Negatives', 'Banded Nordic Curls', 'Nordic Curls'],
+        id: 'hinge',
+        reps: 5,
+        completed: [0, 0, 0]
+    },
     rows: {
         name: ['Vertical Rows', 'Incline Rows', 'Horizontal Rows', 'Wide Rows', 'Weighted Inverted Rows'],
         id: 'rows',
@@ -75,6 +81,24 @@ const defaultState = {
         name: ['Vertical Pushup', 'Incline Pushup', 'Full Pushup', 'Diamond Pushup', 'Pseudo Planche Pushups'],
         id: 'pushup',
         reps: 5,
+        completed: [0, 0, 0]
+    },
+    antiExt: {
+        name: ['Plank', 'Kneeling Ab Wheel Rollouts', 'Standing Ab Wheel Rollouts', 'Ring Ab Rollouts'],
+        id: 'antiExt',
+        reps: 8,
+        completed: [0, 0, 0]
+    },
+    antiRot: {
+        name: ['Assisted Knee Copenhagen Plank', 'Knee Copenhagen Plank', 'Assisted Copenhagen Plank', 'Copenhagen Plank', 'Copenhagen Plank with Movement', 'Ring Pallof Press'],
+        id: 'antiRot',
+        reps: 8,
+        completed: [0, 0, 0]
+    },
+    extension: {
+        name: ['Arch Raises', 'Arch Body Hold', 'Arch Body Rocks', 'Hyper Extension', 'Reverse Hyper Extension'],
+        id: 'extension',
+        reps: 8,
         completed: [0, 0, 0]
     }
 }

@@ -1,8 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import RepButtons from './RepButtons';
 import ExerciseBlock from './ExerciseBlock';
-import ExerciseSelect from './ExerciseSelect';
 
 function Strength() {
 
@@ -15,12 +13,18 @@ function Strength() {
 
             <h1 style={{margin: "20px 0 20px 0"}}>Strength</h1>
 
-            <div className="exercise-container">
 
-                <h4 style={{margin: "0px 0 20px 0"}}>First pair</h4>
+            <p>First pair</p>
+            <ExerciseBlock exercise={exerciseState.pullup} />
+            <ExerciseBlock exercise={exerciseState.squat} />
 
-
-            </div>
+            <p >Second pair</p>
+            <ExerciseBlock exercise={exerciseState.dip} />
+            <ExerciseBlock exercise={exerciseState.hinge} />
+            
+            <p >Third pair</p>
+            <ExerciseBlock exercise={exerciseState.rows} />
+            <ExerciseBlock exercise={exerciseState.pushup} />
 
         </div>
     );

@@ -16,9 +16,9 @@ function RepButtons({ exercise }) {
             <div key={`${exercise.id}-${idx}`}>
             {
                 exerciseArr ===  1 ?
-                <p onClick={() => dispatch(deleteRep(exercise.id, idx))}>{exercise.reps}</p>
+                <span onClick={() => dispatch(deleteRep(exercise.id, idx))}>{exercise.reps}</span>
             :
-                <p onClick={() => dispatch(completeRep(exercise.id, idx))}>O</p>
+                <span onClick={() => dispatch(completeRep(exercise.id, idx))}>O</span>
 
             }
             </div>
