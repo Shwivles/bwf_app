@@ -1,5 +1,6 @@
 import React from 'react';
 import Navi from '../components/Navi';
+import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 
 //bootstrap
@@ -8,6 +9,8 @@ import Container from 'react-bootstrap/Container';
 function About() {
     return (
         <div>
+            <div style={{height: "800px"}}>
+
             <Navi />
             <Container className="about-container">
                 <h2>About the Site</h2>
@@ -24,6 +27,9 @@ function About() {
                     Each section of the workout also has a drobdown menu to select a progression of an exercise.
                 </p>
             </Container>
+
+            </div>
+            <Footer />
         </div>
     );
 }

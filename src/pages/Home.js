@@ -1,5 +1,6 @@
 import React from 'react';
 import Navi from '../components/Navi';
+import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 
 //bootstrap
@@ -25,6 +26,7 @@ function Home() {
                     <Button size="lg" variant="dark" block>Legs</Button>
                 </div>
             </Container>
+            <Footer />
         </div>
     );
 }

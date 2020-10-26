@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
 import rootReducer from './reducers';
 
 //styles
-import './styles/index.css';
+import './styles/index.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
