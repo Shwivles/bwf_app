@@ -2,6 +2,8 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { timerStart, timerStop, reset, updateSec, updateMin, timerEnd, increaseMin, increaseSec, decreaseMin, decreaseSec } from '../actions';
+import { BsFillCaretUpFill, BsFillCaretDownFill } from 'react-icons/bs';
+import Button from 'react-bootstrap/Button';
 
 function Timer() {
 
@@ -52,22 +54,30 @@ function Timer() {
         <div className="time-container">
             <div className="timer ">
                 <div>
-                    <button onClick={() => dispatch(increaseMin())}>Increase</button>
+                    <button onClick={() => dispatch(increaseMin())} className="button-border">
+                        <BsFillCaretUpFill />     
+                    </button>
                     <div style={{textAlign: "center"}}>
                         {minutes}
                     </div>
-                    <button onClick={() => dispatch(decreaseMin())}>Decrease</button>
+                    <button onClick={() => dispatch(decreaseMin())} className="button-border">
+                        <BsFillCaretDownFill />
+                    </button>
                 </div>
                 <div>:</div>
                 <div>
-                    <button onClick={() => dispatch(increaseSec())}>Increase</button>
+                    <button onClick={() => dispatch(increaseSec())} className="button-border">
+                        <BsFillCaretUpFill />
+                    </button>
                     <div style={{textAlign: "center"}}>{seconds}</div>
-                    <button onClick={() => dispatch(decreaseSec())}>Decrease</button>
+                    <button onClick={() => dispatch(decreaseSec())} className="button-border">
+                        <BsFillCaretDownFill />
+                    </button>
                 </div>
             </div>
             <div className="time-buttons">
-                <button onClick={handleTime}>{time.ssButton}</button>
-                <button onClick={() => dispatch(reset())}>Reset</button>
+                <Button variant="dark" onClick={handleTime}>{time.ssButton}</Button>
+                <Button variant="dark" onClick={() => dispatch(reset())}>Reset</Button>
             </div>
         </div>
         </div>
