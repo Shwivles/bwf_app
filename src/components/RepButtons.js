@@ -9,6 +9,7 @@ import { completeRep, deleteRep } from '../actions/workoutActions';
 //if corresponding element is 1 then display rep else display open button
 function RepButtons({ exercise }) {
     const dispatch = useDispatch();
+    const [rep, setRep] = useState([0, 0, 0]);
 
     const mappedCompletedRep = exercise.completed.map((exerciseArr, idx) => {
         return (
@@ -16,6 +17,9 @@ function RepButtons({ exercise }) {
                 onClick={() => {
                     if (exerciseArr === 0) {
                         dispatch(completeRep(exercise.id, idx));
+                        const newRep = [...rep];
+                        newRep[idx] = exercise.reps
+                        setRep(newRep);
                     } else {
                         dispatch(deleteRep(exercise.id, idx));
                     }
@@ -25,7 +29,7 @@ function RepButtons({ exercise }) {
             {
                 exerciseArr === 1 ?
                     <span style={{padding: "4px 4px 4px 4px"}}>
-                        {exercise.reps}
+                        {rep[idx]}
                     </span>
                 :
                     <span></span>
