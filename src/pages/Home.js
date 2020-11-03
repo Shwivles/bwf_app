@@ -21,9 +21,9 @@ function Home() {
             <Container>
                 <div>
                     <Button size="lg" variant="dark" block as={Link} to="/fullbody">Fullbody</Button>
-                    <Button size="lg" variant="dark" block>Push</Button>
-                    <Button size="lg" variant="dark" block>Pull</Button>
-                    <Button size="lg" variant="dark" block>Legs</Button>
+                    <Button size="lg" variant="dark" block as={Link} to="/push">Push</Button>
+                    <Button size="lg" variant="dark" block as={Link} to="/pull">Pull</Button>
+                    <Button size="lg" variant="dark" block as={Link} to="/legs">Legs</Button>
                 </div>
             </Container>
             <Footer />

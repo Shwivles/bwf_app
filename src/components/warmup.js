@@ -2,8 +2,6 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import ExerciseBlock from './ExerciseBlock';
 
-//bootstrap
-import Form from 'react-bootstrap/Form';
 
 
 function Warmup() {

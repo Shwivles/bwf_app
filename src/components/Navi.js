@@ -21,9 +21,9 @@ function Navi() {
                     <Nav.Link as={Link} to="/about">About</Nav.Link>
                     <NavDropdown title="Workouts" id="collasible-nav-dropdown">
                         <NavDropdown.Item as={Link} to="/fullbody">Fullbody</NavDropdown.Item>
-                        <NavDropdown.Item>Push</NavDropdown.Item>
-                        <NavDropdown.Item>Pull</NavDropdown.Item>
-                        <NavDropdown.Item>Legs</NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="/push">Push</NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="/pull">Pull</NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="/legs">Legs</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
                 
