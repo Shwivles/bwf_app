@@ -1,17 +1,20 @@
-import React from 'react';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { timerStart, timerStop, reset, updateSec, updateMin, timerEnd, increaseMin, increaseSec, decreaseMin, decreaseSec } from '../actions';
 import { BsFillCaretUpFill, BsFillCaretDownFill } from 'react-icons/bs';
 import Button from 'react-bootstrap/Button';
 
+import alarmSound from '../sounds/alarmSound.wav';
+
 function Timer() {
 
     const time = useSelector(state => state.tickReducer);
     const dispatch = useDispatch();
+    const sound = new Audio(alarmSound);
 
     const tick = () => {
         if (time.seconds === 0 && time.minutes === 0) {
+            sound.play();
             dispatch(timerEnd());
         } else if (time.seconds === 0) {
             dispatch(updateMin());
@@ -25,6 +28,7 @@ function Timer() {
             dispatch(timerStart());
         } else {
             dispatch(timerStop());
+            sound.pause();
         }
     }
 
@@ -77,7 +81,10 @@ function Timer() {
             </div>
             <div className="time-buttons">
                 <Button variant="dark" onClick={handleTime}>{time.ssButton}</Button>
-                <Button variant="dark" onClick={() => dispatch(reset())}>Reset</Button>
+                <Button variant="dark" onClick={() => {
+                    dispatch(reset())
+                    sound.pause();
+                }}>Reset</Button>
             </div>
         </div>
         </div>
