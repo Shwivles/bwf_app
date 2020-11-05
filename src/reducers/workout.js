@@ -20,6 +20,7 @@ const defaultState = {
     deadbugs: {
         name: ['Deadbugs'],
         id: 'deadbugs',
+        time: 30,
         reps: 30,
         completed: [0]
     },
@@ -32,6 +33,7 @@ const defaultState = {
     supportHold: {
         name: ['Support Hold'],
         id: 'supportHold',
+        time: 30,
         reps: 30,
         completed: [0]
     },
@@ -50,6 +52,7 @@ const defaultState = {
     pullup: {
         name: ['Scapular Pulls', 'Arch Hangs', "Pull-up Negatives", 'Pull-ups'],
         id: 'pullup',
+        time: 30,
         reps: '5',
         completed: [0, 0, 0]
     },
@@ -86,18 +89,21 @@ const defaultState = {
     antiExt: {
         name: ['Plank', 'Kneeling Ab Wheel Rollouts', 'Standing Ab Wheel Rollouts', 'Ring Ab Rollouts'],
         id: 'antiExt',
+        time: 30,
         reps: 8,
         completed: [0, 0, 0]
     },
     antiRot: {
         name: ['Assisted Knee Copenhagen Plank', 'Knee Copenhagen Plank', 'Assisted Copenhagen Plank', 'Copenhagen Plank', 'Copenhagen Plank with Movement', 'Ring Pallof Press'],
         id: 'antiRot',
+        time: 30,
         reps: 8,
         completed: [0, 0, 0]
     },
     extension: {
         name: ['Arch Raises', 'Arch Body Hold', 'Arch Body Rocks', 'Hyper Extension', 'Reverse Hyper Extension'],
         id: 'extension',
+        time: 30,
         reps: 8,
         completed: [0, 0, 0]
     }
@@ -112,7 +118,8 @@ const workoutReducer = (state = defaultState, action) => {
         
         case 'DECREASE_REP':
             const decreaseState = {...state};
-            decreaseState[action.id].reps -= 1;
+            if (decreaseState[action.id].reps !== 0)
+                decreaseState[action.id].reps -= 1;
 
             return decreaseState;
 
@@ -126,6 +133,17 @@ const workoutReducer = (state = defaultState, action) => {
             const deletedState = {...state};
             deletedState[action.id].completed[action.idx] = 0;
             return deletedState;
+
+        case 'INCREASE_TIME_REP': 
+            const incTimeState = {...state};
+            incTimeState[action.id].time += 10;
+            return incTimeState;
+
+        case 'DECREASE_TIME_REP':
+            const decTimeState = {...state};
+            if (decTimeState[action.id].time !== 0)
+                decTimeState[action.id].time -= 10;
+            return decTimeState;
 
         default: 
             return state;

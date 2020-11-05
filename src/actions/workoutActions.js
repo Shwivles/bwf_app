@@ -26,3 +26,16 @@ export const deleteRep = (id, idx) => ({
     idx
 });
 
+//increase timerep
+export const incTimeRep = (id) => ({
+    type: "INCREASE_TIME_REP",
+    id
+});
+
+
+//decrease timerep
+export const decTimeRep = (id) => ({
+    type: "DECREASE_TIME_REP",
+    id
+});
+
