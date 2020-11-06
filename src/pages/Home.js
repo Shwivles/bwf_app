@@ -18,8 +18,11 @@ function Home() {
                 <p>Workouts featuring Reddit's r/bodyweightfitness recomended routine.</p>
                 <Button size="lg" variant="secondary" as={Link} to="/about">Learn more</Button>
             </Jumbotron>
-            <Container>
-                <div>
+            <Container style={{
+                display: "flex",
+                justifyContent: "center"
+            }}>
+                <div style={{width: "95%"}}>
                     <Button size="lg" variant="dark" block as={Link} to="/fullbody">Fullbody</Button>
                     <Button size="lg" variant="dark" block as={Link} to="/push">Push</Button>
                     <Button size="lg" variant="dark" block as={Link} to="/pull">Pull</Button>
