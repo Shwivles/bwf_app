@@ -26,7 +26,6 @@ function ExerciseBlock({ exercise }) {
      */
     const [isTime, setIsTime]  = useState(false);
     const [show, setShow] = useState(false);
-    const [test, setTest] = useState(true);     //delete later
     const target = useRef(null);
 
 
