@@ -24,7 +24,7 @@ function About() {
                 <p>
                     This is purely a personal project to see if I could recreate a tracker similar to others that have been shown 
                     on the subreddit. The site features a all-in-one timer that can be used for breaks and timed exercises like planks.
-                    Each section of the workout also has a drobdown menu to select a progression of an exercise.
+                    Each section of the workout also has a dropdown menu to select a progression of an exercise.
                 </p>
             </Container>
 
