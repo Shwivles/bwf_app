@@ -1,0 +1,3 @@
+[submodule "client_test"]
+	path = client_test
+	url = https://github.com/Shwivles/bwf_app.git
